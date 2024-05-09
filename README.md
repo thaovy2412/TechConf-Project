@@ -63,9 +63,12 @@ Complete a month cost analysis of each Azure resource to give an estimate total 
 
 | Azure Resource | Service Tier | Monthly Cost |
 | ------------ | ------------ | ------------ |
-| *Azure Postgres Database* |     |              |
-| *Azure Service Bus*   |         |              |
-| ...                   |         |              |
+| Azure Postgres Database | Standard_B1ms | 16.09 USD |
+| Azure Service Bus | Basic | 0.05 USD |
+| App Service Plan | Free F1 | Free |
+| Function App Service Plan | Y1 - Consumption | Based on per-second resource consumption and executions |
 
 ## Architecture Explanation
 This is a placeholder section where you can provide an explanation and reasoning for your architecture selection for both the Azure Web App and Azure Function.
+1. Azure Web App is chosen for its easy deployment and scalability, providing a reliable environment for user interaction and notification registration.
+2. Azure Function is selected for email sending due to its serverless nature, event-driven architecture, and seamless integration with other Azure services. This ensures efficient resource utilization and cost-effectiveness for handling notification submissions.
