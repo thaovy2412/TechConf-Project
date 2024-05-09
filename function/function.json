@@ -1,0 +1,12 @@
+{
+    "scriptFile": "function_app.py",
+    "bindings": [
+        {
+            "name": "azservicebus",
+            "type": "serviceBusTrigger",
+            "direction": "in",
+            "queueName": "notificationqueue",
+            "connection": "vytt1sb_SERVICEBUS"
+        }
+    ]
+}
