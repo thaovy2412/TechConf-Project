@@ -70,7 +70,16 @@ Complete a month cost analysis of each Azure resource to give an estimate total 
 
 ## Architecture Explanation
 This is a placeholder section where you can provide an explanation and reasoning for your architecture selection for both the Azure Web App and Azure Function.
-1. Azure App Service: Provides managed hosting for your Flask app, offering auto-scaling and high availability without the need for infrastructure management, thus optimizing costs.
-2. Azure PostgreSQL Database: A managed database service ensuring scalability and security without the overhead of manual maintenance, optimizing costs by eliminating infrastructure management tasks.
-3. Azure Service Bus: Enables reliable messaging and asynchronous communication, with a pay-as-you-go pricing model based on message volume, optimizing costs for event-driven architectures.
-4. Azure Function App: Executes code in response to events without managing infrastructure, following a consumption-based pricing model, ensuring cost-effectiveness for sporadic workloads like handling Service Bus messages.
+1. Drawbacks of Previous Architecture:
+- Scalability Issues: Unable to handle peak loads, resulting in potential slowdowns or downtime during high traffic.
+- Performance Bottlenecks: Sending notifications to all attendees was slow and prone to timeout errors due to synchronous processing.
+- Cost Inefficiency: Inability to scale dynamically led to resource wastage and increased operational costs.
+2. Advantages of the Current Architecture:
+- Improved Scalability: Azure App Service enables automatic scaling to handle varying user loads without performance degradation.
+- Enhanced Performance: Refactoring notification logic with Azure Functions and Service Bus Queues reduces processing time and eliminates timeout errors.
+- Cost Optimization: Leveraging Azure's pay-as-you-go model and scalability features optimizes resource allocation and reduces operational costs.
+3. Azure Resources Used:
+- Azure App Service: Hosts the web application with managed infrastructure for easy scalability.
+- Azure Postgres Database: Provides reliable and scalable database storage for the application data.
+- Azure Functions: Executes notification logic asynchronously for improved performance and scalability.
+- Azure Service Bus Queue: Facilitates reliable messaging between the web application and notification processing, ensuring seamless asynchronous communication.
