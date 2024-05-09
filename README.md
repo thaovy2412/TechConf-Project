@@ -70,5 +70,7 @@ Complete a month cost analysis of each Azure resource to give an estimate total 
 
 ## Architecture Explanation
 This is a placeholder section where you can provide an explanation and reasoning for your architecture selection for both the Azure Web App and Azure Function.
-1. Azure Web App is chosen for its easy deployment and scalability, providing a reliable environment for user interaction and notification registration.
-2. Azure Function is selected for email sending due to its serverless nature, event-driven architecture, and seamless integration with other Azure services. This ensures efficient resource utilization and cost-effectiveness for handling notification submissions.
+1. Azure App Service: Provides managed hosting for your Flask app, offering auto-scaling and high availability without the need for infrastructure management, thus optimizing costs.
+2. Azure PostgreSQL Database: A managed database service ensuring scalability and security without the overhead of manual maintenance, optimizing costs by eliminating infrastructure management tasks.
+3. Azure Service Bus: Enables reliable messaging and asynchronous communication, with a pay-as-you-go pricing model based on message volume, optimizing costs for event-driven architectures.
+4. Azure Function App: Executes code in response to events without managing infrastructure, following a consumption-based pricing model, ensuring cost-effectiveness for sporadic workloads like handling Service Bus messages.
